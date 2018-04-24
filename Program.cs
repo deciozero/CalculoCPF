@@ -14,6 +14,7 @@ namespace CalculoCPF
            int resto=0;
            int rs1 = 0;
            int rs2 = 0;
+           string cpffinal;
 
            cpfCliente = "83205608615";
            cpf9 = cpfCliente.Substring(0,9);
@@ -23,7 +24,7 @@ namespace CalculoCPF
                rs1 += int.Parse(cpf9[i].ToString())*contagem1;
                contagem1--;
            }
-           resto = rs1%11;
+           resto = rs1 % 11;
            if(resto < 2)
            cpf10 = cpf9+0;
            else
@@ -35,11 +36,11 @@ namespace CalculoCPF
                rs2 += int.Parse(cpf10[i].ToString())*contagem2;
                contagem2--;
            }
-               resto = rs2%11;
+               resto = rs2 % 11;
                if(resto < 2)
-               Console.WriteLine(cpf10+0);
+               cpffinal = cpf10 + 0;
                else
-               Console.WriteLine(cpf10+(11-resto));
+               cpffinal = cpf10+(11-resto);
         }
     }   
 }
